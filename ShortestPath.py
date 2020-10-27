@@ -1,5 +1,39 @@
 import numpy as np
 import random
+# fsm.py - http://www.graphviz.org/content/fsm
+
+from graphviz import Digraph
+
+f = Digraph('finite_state_machine', filename='ShortestPath.gv')
+f.attr(rankdir='LR', size='8,5')
+
+f.attr('node', shape='doublecircle')
+f.node('LR_0')
+f.node('LR_8')
+
+f.attr('node', shape='circle')
+f.edge('LR_0', 'LR_1', label='15')
+f.edge('LR_0', 'LR_2', label='13')
+f.edge('LR_0', 'LR_3', label='5')
+f.edge('LR_1', 'LR_7', label='11')
+f.edge('LR_1', 'LR_5', label='8')
+f.edge('LR_1', 'LR_2', label='2')
+f.edge('LR_2', 'LR_3', label='18')
+f.edge('LR_2', 'LR_5', label='6')
+f.edge('LR_2', 'LR_4', label='3')
+f.edge('LR_3', 'LR_2', label='18')
+f.edge('LR_3', 'LR_4', label='4')
+f.edge('LR_3', 'LR_8', label='99')
+f.edge('LR_4', 'LR_5', label='1')
+f.edge('LR_4', 'LR_6', label='9')
+f.edge('LR_4', 'LR_8', label='14')
+f.edge('LR_5', 'LR_7', label='17')
+f.edge('LR_5', 'LR_6', label='16')
+f.edge('LR_6', 'LR_8', label='10')
+f.edge('LR_7', 'LR_8', label='12')
+f.edge('LR_7', 'LR_6', label='7')
+
+f.view()
 
 FT = []
 R = []
