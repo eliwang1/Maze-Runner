@@ -101,6 +101,7 @@ def GetPossNextStates(s, FT):
 
 def GetRandNextState(s, FT):
       possNextStates = GetPossNextStates(s, FT);
+#      print(possNextStates);
       ct = len(possNextStates) - 1;
       idx = random.randint(0, ct);
       return possNextStates[idx];
@@ -194,7 +195,7 @@ filled1, attr1 = Walk(0, 8, Q);
 print("\nEnd demo ");
 # Console.ReadLine();
 # Main
-os.remove("graph4.py")
+# os.remove("graph4.py")
 spgraph = """ 
 from graphviz import Digraph
 f = Digraph('finite_state_machine', filename='ShortestPath.gv')
